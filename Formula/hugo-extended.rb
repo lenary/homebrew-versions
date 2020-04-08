@@ -5,6 +5,8 @@ class HugoExtended < Formula
   version "0.64.0"
   sha256 "c31fbe48ec5a3c1b677abd2755a6fab2ae3baa7536382499243dc21ffd9ebd0e"
 
+  conflicts_with "hugo", :because => "hugo-extended also installs a hugo binary"
+
   def install
     bin.install "hugo"
   end

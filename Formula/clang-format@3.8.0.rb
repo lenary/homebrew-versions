@@ -18,6 +18,8 @@ class ClangFormatAT380 < Formula
     end
   end
 
+  conflicts_with "clang-format", :because => "clang-format also installs a clang-format binary"
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
 
