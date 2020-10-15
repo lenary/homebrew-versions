@@ -1,24 +1,25 @@
-class ClangFormatAT380 < Formula
+class ClangFormatAT600 < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
-  version "3.8.0"
+  version "6.0.0"
 
   stable do
-    url "https://releases.llvm.org/3.8.0/llvm-3.8.0.src.tar.xz"
-    sha256 "555b028e9ee0f6445ff8f949ea10e9cd8be0d084840e21fbbe1d31d51fc06e46"
+    url "https://releases.llvm.org/6.0.0/llvm-6.0.0.src.tar.xz"
+    sha256 "1ff53c915b4e761ef400b803f07261ade637b0c269d99569f18040f3dcee4408"
 
     resource "clang" do
-      url "https://releases.llvm.org/3.8.0/cfe-3.8.0.src.tar.xz"
-      sha256 "04149236de03cf05232d68eb7cb9c50f03062e339b68f4f8a03b650a11536cf9"
+      url "https://releases.llvm.org/6.0.0/cfe-6.0.0.src.tar.xz"
+      sha256 "e07d6dd8d9ef196cfc8e8bb131cbd6a2ed0b1caf1715f9d05b0f0eeaddb6df32"
     end
 
     resource "libcxx" do
-      url "https://releases.llvm.org/3.8.0/libcxx-3.8.0.src.tar.xz"
-      sha256 "36804511b940bc8a7cefc7cb391a6b28f5e3f53f6372965642020db91174237b"
+      url "https://releases.llvm.org/6.0.0/libcxx-6.0.0.src.tar.xz"
+      sha256 "70931a87bde9d358af6cb7869e7535ec6b015f7e6df64def6d2ecdd954040dd9"
     end
   end
 
   conflicts_with "clang-format", :because => "clang-format also installs a clang-format binary"
+  conflicts_with "clang-format@3.8.0", :because => "clang-format@3.8.0 also installs a clang-format binary"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
